@@ -1,0 +1,12 @@
+workflows:
+  expo-build:
+    name: Expo Managed Android Build
+    environment:
+      node: 18.16.0
+    scripts:
+      - name: Install dependencies
+        script: npm install
+      - name: Build with EAS
+        script: npx eas build --platform android --non-interactive
+    artifacts:
+      - ./dist/**/*.apk
